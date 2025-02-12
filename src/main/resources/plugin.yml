@@ -1,0 +1,4 @@
+name: YanagiAltDetector
+version: '1.0'
+main: win.yanagi.yanagiAltDetector.YanagiAltDetector
+api-version: '1.21'

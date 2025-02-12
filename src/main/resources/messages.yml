@@ -1,0 +1,23 @@
+reloaded: "再読み込みしました"
+error:
+  player-not-found: "<red>プレイヤーが見つかりませんでした"
+command:
+  altcheck:
+    found: |-
+      <#ffd4f5>%player% <#ffed95>と同じIPで参加済みのプレイヤーが見つかりました
+      %alt-info%
+    not-found: "<#ffd4f5>%player% <#afdaff>と同じIPで参加済みのプレイヤーは見つかりませんでした"
+on-join:
+  found: "<#ffd4f5>%player% <#ffed95>と同じIPで参加済みのプレイヤーがいます <hover:show_text:'%alt-info%'><white>[<#ac8bff>詳細を表示<white>]</hover>"
+  not-found: ""
+format:
+  alt-info:
+    on-join:
+      message: "%position%. %player% - %status%<reset>"
+      delimiter: "<newline>"
+    command:
+      message: "%player%<reset>"
+      delimiter: ", "
+  status:
+    online: "<green>オンライン</green>"
+    offline: "<red>オフライン</red>"
