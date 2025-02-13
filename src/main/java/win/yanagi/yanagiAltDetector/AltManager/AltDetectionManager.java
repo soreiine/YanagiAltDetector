@@ -81,7 +81,7 @@ public class AltDetectionManager {
             ));
 
             if (altList.size() > i) {
-                stringBuilder.append(messageManager.getString(delimiter));
+                stringBuilder.append(messageManager.getRawString(delimiter));
             }
         }
 
