@@ -1,6 +1,5 @@
 package win.yanagi.yanagiAltDetector.Command;
 
-import org.bukkit.entity.Player;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 import revxrsal.commands.bukkit.annotation.CommandPermission;
