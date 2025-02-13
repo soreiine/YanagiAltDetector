@@ -3,19 +3,23 @@ error:
   player-not-found: "<red>プレイヤーが見つかりませんでした"
 command:
   altcheck:
+    # 有効なプレイスホルダー: %player%, %alt-info%
     found: |-
       <#ffd4f5>%player% <#ffed95>と同じIPで参加済みのプレイヤーが見つかりました
       %alt-info%
     not-found: "<#ffd4f5>%player% <#afdaff>と同じIPで参加済みのプレイヤーは見つかりませんでした"
 on-join:
+  # 有効なプレイスホルダー: %player%, %alt-info%
   found: "<#ffd4f5>%player% <#ffed95>と同じIPで参加済みのプレイヤーがいます <hover:show_text:'%alt-info%'><white>[<#ac8bff>詳細を表示<white>]</hover>"
   not-found: ""
 format:
   alt-info:
     on-join:
+      # 有効なプレイスホルダー: %position%, %player%, %status%
       message: "%position%. %player% - %status%<reset>"
       delimiter: "<newline>"
     command:
+      # 有効なプレイスホルダー: %player%
       message: "%player%<reset>"
       delimiter: ", "
   status:
