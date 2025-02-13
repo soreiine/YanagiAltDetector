@@ -16,7 +16,7 @@ public class AdminCommand {
     // /alt <target> の処理部分
     @Command("alt")
     @CommandPermission("yanagialtdetector.checkalt")
-    public void seeAlts(BukkitCommandActor actor, String target) {
+    public void checkAlt(BukkitCommandActor actor, String target) {
         String targetUUID = plugin.getDatabase().getUUID(target);
 
         if (targetUUID.equals("")) {
