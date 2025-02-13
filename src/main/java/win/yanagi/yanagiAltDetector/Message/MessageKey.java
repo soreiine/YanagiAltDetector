@@ -21,10 +21,10 @@ public enum MessageKey {
     FORMAT_ALT_INFO_ON_JOIN_SEPARATOR("format.alt-info.on-join.separator"),
     FORMAT_ALT_INFO_ON_JOIN_LOG_MESSAGE("format.alt-info.on-join.log.message"),
     FORMAT_ALT_INFO_ON_JOIN_LOG_SEPARATOR("format.alt-info.on-join.log.separator"),
-    FORMAT_ALT_INFO_COMMAND_ALTCHECK_MESSAGE("format.alt-info.command.message"),
-    FORMAT_ALT_INFO_COMMAND_ALTCHECK_SEPARATOR("format.alt-info.command.separator"),
-    FORMAT_ALT_INFO_COMMAND_ALTCHECK_LOG_MESSAGE("format.alt-info.on-join.log.message"),
-    FORMAT_ALT_INFO_COMMAND_ALTCHECK_LOG_SEPARATOR("format.alt-info.on-join.log.separator");
+    FORMAT_ALT_INFO_COMMAND_ALTCHECK_MESSAGE("format.alt-info.command.altcheck.message"),
+    FORMAT_ALT_INFO_COMMAND_ALTCHECK_SEPARATOR("format.alt-info.command.altcheck.separator"),
+    FORMAT_ALT_INFO_COMMAND_ALTCHECK_LOG_MESSAGE("format.alt-info.command.altcheck.log.message"),
+    FORMAT_ALT_INFO_COMMAND_ALTCHECK_LOG_SEPARATOR("format.alt-info.command.altcheck.log.separator");
 
     private final String key;
 
