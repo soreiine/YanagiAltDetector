@@ -58,7 +58,7 @@ public class AltDetectionManager {
     }
 
     // DatabasePlayerDataの情報をymlファイルに書かれたフォーマットに置き換え
-    public String getFormattedAltInfo(List<DatabasePlayerData> altList, MessageKey formatKey, MessageKey delimiter) {
+    public String getFormattedAltInfo(List<DatabasePlayerData> altList, MessageKey formatKey, MessageKey separator) {
         if (altList.isEmpty()) {
             return "";
         }
@@ -81,7 +81,7 @@ public class AltDetectionManager {
             ));
 
             if (altList.size() > i) {
-                stringBuilder.append(messageManager.getRawString(delimiter));
+                stringBuilder.append(messageManager.getRawString(separator));
             }
         }
 
