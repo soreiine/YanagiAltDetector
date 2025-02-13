@@ -1,4 +1,4 @@
-package win.yanagi.yanagiAltDetector.Listner;
+package win.yanagi.yanagiAltDetector.Listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

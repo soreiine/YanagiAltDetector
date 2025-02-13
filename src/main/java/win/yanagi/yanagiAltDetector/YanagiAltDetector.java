@@ -5,7 +5,7 @@ import revxrsal.commands.bukkit.BukkitLamp;
 import win.yanagi.yanagiAltDetector.AltManager.AltDetectionManager;
 import win.yanagi.yanagiAltDetector.Command.AdminCommand;
 import win.yanagi.yanagiAltDetector.Database.Database;
-import win.yanagi.yanagiAltDetector.Listner.PlayerJoinListener;
+import win.yanagi.yanagiAltDetector.Listener.PlayerJoinListener;
 import win.yanagi.yanagiAltDetector.Message.MessageManager;
 
 import java.io.File;
