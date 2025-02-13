@@ -32,7 +32,7 @@ public class MessageManager {
         messages = YamlConfiguration.loadConfiguration(messagesFile);
     }
 
-    public @Nullable String getRawString(MessageKey key, Object... replacers) {
+    public String getRawString(MessageKey key, Object... replacers) {
         String rawMessage = messages.getString(key.getKey());
         if (rawMessage == null) {
             return null;
@@ -41,7 +41,7 @@ public class MessageManager {
         return format(rawMessage, replacers);
     }
 
-    public @Nullable Component getRawComponent(MessageKey key, Object... replacers) {
+    public Component getRawComponent(MessageKey key, Object... replacers) {
         String rawMessage = messages.getString(key.getKey());
         if (rawMessage == null || rawMessage.trim().isEmpty()) return null;
 
@@ -50,11 +50,12 @@ public class MessageManager {
         return formatted != null ? Component.text(formatted) : Component.empty();
     }
 
-    public @Nullable String getString(MessageKey key, Object... replacers) {
+    public String getString(MessageKey key, Object... replacers) {
         String rawMessage = messages.getString(key.getKey());
         if (rawMessage == null) {
             return null;
         }
+
         String formatted = format(rawMessage, replacers);
         if (formatted == null) {
             return null;
@@ -64,7 +65,7 @@ public class MessageManager {
         return LegacyComponentSerializer.legacySection().serialize(component);
     }
 
-    public @Nullable Component getComponent(MessageKey key, Object... replacers) {
+    public Component getComponent(MessageKey key, Object... replacers) {
         String rawMessage = messages.getString(key.getKey());
         if (rawMessage == null || rawMessage.trim().isEmpty()) return null;
 
@@ -74,12 +75,12 @@ public class MessageManager {
         return formatted != null ? miniMessage.deserialize(formatted) : null;
     }
 
-    public @Nullable List<String> getStringList(MessageKey key, Object... replacers) {
+    public List<String> getStringList(MessageKey key, Object... replacers) {
         String message = getString(key, replacers);
         return message == null ? null : Stream.of(message.split("\n")).map(String::trim).collect(Collectors.toList());
     }
 
-    public @Nullable List<Component> getComponentList(MessageKey key, Object... replacers) {
+    public List<Component> getComponentList(MessageKey key, Object... replacers) {
         Component message = getComponent(key, replacers);
         if (message == null) return null;
 
@@ -110,7 +111,7 @@ public class MessageManager {
     }
 
 
-    private @Nullable String format(String message, Object... replacers) {
+    private String format(String message, Object... replacers) {
         if (message == null) return null;
 
         for (int i = 0; i < replacers.length; i += 2) {
