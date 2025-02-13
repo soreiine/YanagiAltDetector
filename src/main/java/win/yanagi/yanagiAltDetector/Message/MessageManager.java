@@ -12,6 +12,7 @@ import win.yanagi.yanagiAltDetector.YanagiAltDetector;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -98,6 +99,13 @@ public class MessageManager {
         Component message = getComponent(key, replacers);
         if (message != null) {
             receivers.forEach(receiver -> receiver.sendMessage(message));
+        }
+    }
+
+    public void sendLog(Level level, MessageKey key, Object... replacers) {
+        String message = getString(key, replacers);
+        if (message != null) {
+            plugin.getLogger().log(level, message);
         }
     }
 

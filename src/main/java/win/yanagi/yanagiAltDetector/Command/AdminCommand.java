@@ -1,10 +1,13 @@
 package win.yanagi.yanagiAltDetector.Command;
 
+import org.bukkit.entity.Player;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 import revxrsal.commands.bukkit.annotation.CommandPermission;
 import win.yanagi.yanagiAltDetector.Message.MessageKey;
 import win.yanagi.yanagiAltDetector.YanagiAltDetector;
+
+import java.util.logging.Level;
 
 public class AdminCommand {
     private final YanagiAltDetector plugin;
@@ -24,14 +27,27 @@ public class AdminCommand {
             return;
         }
 
+        boolean isActorPlayer = actor.isPlayer();
+
         plugin.getAltDetectionManager().getAlt(targetUUID, (altsList) -> {
             if (!altsList.isEmpty()) {
-                plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_FOUND,
-                        "player", target,
-                        "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_SEPARATOR)
-                );
+                if (isActorPlayer) {
+                    plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_FOUND,
+                            "player", target,
+                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_SEPARATOR)
+                    );
+                } else {
+                    plugin.getMessageManager().sendLog(Level.WARNING, MessageKey.COMMAND_ALTCHECK_LOG_FOUND,
+                            "player", target,
+                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_LOG_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_LOG_SEPARATOR)
+                    );
+                }
             } else {
-                plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_NOT_FOUND, "player", target);
+                if (isActorPlayer) {
+                    plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_NOT_FOUND, "player", target);
+                } else {
+                    plugin.getMessageManager().sendLog(Level.INFO, MessageKey.COMMAND_ALTCHECK_LOG_NOT_FOUND, "player", target);
+                }
             }
         });
     }
