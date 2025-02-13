@@ -62,7 +62,8 @@ public class MessageManager {
         }
 
         Component component = MiniMessage.miniMessage().deserialize(formatted);
-        return LegacyComponentSerializer.legacySection().serialize(component);
+        String serialized = LegacyComponentSerializer.legacySection().serialize(component);
+        return !serialized.isEmpty() ? serialized : null;
     }
 
     public Component getComponent(MessageKey key, Object... replacers) {
