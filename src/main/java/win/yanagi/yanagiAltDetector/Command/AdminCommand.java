@@ -33,12 +33,12 @@ public class AdminCommand {
                 if (isActorPlayer) {
                     plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_FOUND,
                             "player", target,
-                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_SEPARATOR)
+                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_ALTCHECK_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_ALTCHECK_SEPARATOR)
                     );
                 } else {
                     plugin.getMessageManager().sendLog(Level.WARNING, MessageKey.COMMAND_ALTCHECK_LOG_FOUND,
                             "player", target,
-                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_LOG_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_LOG_SEPARATOR)
+                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_ALTCHECK_LOG_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_ALTCHECK_LOG_SEPARATOR)
                     );
                 }
             } else {

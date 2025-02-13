@@ -4,46 +4,49 @@ error:
 command:
   altcheck:
     # 有効なプレイスホルダー: %player%, %alt-info%
+    # %alt-info%のフォーマットは、format.alt-info.command.altcheckから取得されます
     found: |-
       <#ffd4f5>%player% <#ffed95>と同じIPで参加済みのプレイヤーが見つかりました
-      %alt-info%
+      <#96e4eb>%alt-info%
     # 有効なプレイスホルダー: %player%
     not-found: "<#ffd4f5>%player% <#afdaff>と同じIPで参加済みのプレイヤーは見つかりませんでした"
     log:
       # 有効なプレイスホルダー: %player%, %alt-info%
       # %alt-info%のフォーマットは、format.alt-info.command.logから取得されます
-      found: "%player% と同じIPで参加済みのプレイヤーがいます"
+      found: "%player% と同じIPで参加済みのプレイヤーがいます: %alt-info%"
       # 有効なプレイスホルダー: %player%
       not-found: "%player% と同じIPで参加済みのプレイヤーは見つかりませんでした"
 on-join:
   # 有効なプレイスホルダー: %player%, %alt-info%
+  # %alt-info%のフォーマットは、format.alt-info.on-joinから取得されます
   found: "<#ffd4f5>%player% <#ffed95>と同じIPで参加済みのプレイヤーがいます <hover:show_text:'%alt-info%'><white>[<#ac8bff>詳細を表示<white>]</hover>"
   not-found: ""
   log:
     # 有効なプレイスホルダー: %player%, %alt-info%
     # %alt-info%のフォーマットは、format.alt-info.on-join.logから取得されます
-    found: "%player% と同じIPで参加済みのプレイヤーがいます"
+    found: "%player% と同じIPで参加済みのプレイヤーがいます: %alt-info%"
     not-found: ""
 format:
   alt-info:
     on-join:
-      # 有効なプレイスホルダー: %position%, %player%, %status%
+      # 有効なプレイスホルダー: %position%, %player%, %uuid%, %status%
       # %status%のフォーマットは、format.statusから取得されます
       message: "%position%. %player% - %status%<reset>"
       separator: "<newline>"
       log:
-        # 有効なプレイスホルダー: %position%, %player%, %status%
+        # 有効なプレイスホルダー: %position%, %player%, %uuid%, %status%
         # %status%のフォーマットは、format.statusから取得されます
-        message: "%player%<reset>"
+        message: "%player%"
         separator: ", "
     command:
-      # 有効なプレイスホルダー: %player%
-      message: "%player%<reset>"
-      separator: ", "
-      log:
+      altcheck:
         # 有効なプレイスホルダー: %player%
-        message: "%player%<reset>"
+        message: "%player%"
         separator: ", "
+        log:
+          # 有効なプレイスホルダー: %player%
+          message: "%player%"
+          separator: ", "
   status:
     online: "<green>オンライン</green>"
     offline: "<red>オフライン</red>"
