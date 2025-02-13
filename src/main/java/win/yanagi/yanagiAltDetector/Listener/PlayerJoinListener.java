@@ -36,7 +36,7 @@ public class PlayerJoinListener implements Listener {
 
                     plugin.getMessageManager().send(ops, MessageKey.ON_JOIN_FOUND,
                             "player", name,
-                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_ON_JOIN_MESSAGE, MessageKey.FORMAT_ALT_INFO_ON_JOIN_DELIMITER)
+                            "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_ON_JOIN_MESSAGE, MessageKey.FORMAT_ALT_INFO_ON_JOIN_SEPARATOR)
                     );
                 } else { // 同IPの参加者が見つからなかったら
                     plugin.getMessageManager().send(ops, MessageKey.ON_JOIN_NOT_FOUND, "player", name);

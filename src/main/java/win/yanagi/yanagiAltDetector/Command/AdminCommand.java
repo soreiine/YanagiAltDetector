@@ -28,7 +28,7 @@ public class AdminCommand {
             if (!altsList.isEmpty()) {
                 plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_FOUND,
                         "player", target,
-                        "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_DELIMITER)
+                        "alt-info", plugin.getAltDetectionManager().getFormattedAltInfo(altsList, MessageKey.FORMAT_ALT_INFO_COMMAND_MESSAGE, MessageKey.FORMAT_ALT_INFO_COMMAND_SEPARATOR)
                 );
             } else {
                 plugin.getMessageManager().send(actor.sender(), MessageKey.COMMAND_ALTCHECK_NOT_FOUND, "player", target);

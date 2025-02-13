@@ -14,9 +14,9 @@ public enum MessageKey {
     FORMAT_STATUS_ONLINE("format.status.online"),
     FORMAT_STATUS_OFFLINE("format.status.offline"),
     FORMAT_ALT_INFO_ON_JOIN_MESSAGE("format.alt-info.on-join.message"),
-    FORMAT_ALT_INFO_ON_JOIN_DELIMITER("format.alt-info.on-join.delimiter"),
+    FORMAT_ALT_INFO_ON_JOIN_SEPARATOR("format.alt-info.on-join.separator"),
     FORMAT_ALT_INFO_COMMAND_MESSAGE("format.alt-info.command.message"),
-    FORMAT_ALT_INFO_COMMAND_DELIMITER("format.alt-info.command.delimiter");
+    FORMAT_ALT_INFO_COMMAND_SEPARATOR("format.alt-info.command.separator");
 
     private final String key;
 

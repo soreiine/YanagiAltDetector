@@ -17,11 +17,11 @@ format:
     on-join:
       # 有効なプレイスホルダー: %position%, %player%, %status%
       message: "%position%. %player% - %status%<reset>"
-      delimiter: "<newline>"
+      separator: "<newline>"
     command:
       # 有効なプレイスホルダー: %player%
       message: "%player%<reset>"
-      delimiter: ", "
+      separator: ", "
   status:
     online: "<green>オンライン</green>"
     offline: "<red>オフライン</red>"
