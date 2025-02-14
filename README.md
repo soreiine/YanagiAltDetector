@@ -1,5 +1,5 @@
 # YanagiAltDetector
-Java, PaperのAPI, SQL の練習用プラグイン
+Java, PaperのAPI, SQL の練習用で作ったプラグイン
 
 同じIPからの参加者を検出して、チャットやログに送信します。 (ログインからの日時は考慮しません)
 
